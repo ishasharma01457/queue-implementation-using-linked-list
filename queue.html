@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+class Queue {
+  constructor() {
+    this.data = {};
+    this.head = 0;
+    this.tail = 0;
+  }
+  enqueue(data) {
+    this.data[this.tail] = data;
+    this.tail++;
+  }
+  dequeue() {
+    const data = this.data[this.head];
+    delete this.data[this.head];
+    this.head++;
+    return data;
+  }
+
+     
+  peek() {
+    return this.data[this.head];
+  }
+  get length() {
+    return this.tail - this.head;
+  }
+}
+let queue = new Queue();
+queue.enqueue(7);
+queue.enqueue(2);
+queue.enqueue(6);
+queue.enqueue(4);
+queue.display(); 
+queue.dequeue();
+queue.display();
+queue.peek();    
+
+</script>
+</html>   
